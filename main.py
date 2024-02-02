@@ -8,6 +8,7 @@ TELEGRAM_TOKEN = ""   # Change with your bot token (from @BotFather)
 USERS_DIR = 'users/'    # Directory where user data is stored
 ADMIN_ID = 000000    # Change with your Telegram ID
 DUINO_USERNAME = 'Nikolovich'   # Change with your Duino-Coin username
+DUINO_PASSWORD = '' # Change with your Duino-Coin password
 
 def load_user_data(user_id):   # Load user data from file
     filename = f"{USERS_DIR}{user_id}.txt"
@@ -107,7 +108,7 @@ def withdraw(user_id, amount): # Withdraw funds from user's balance
 
     params = { # Withdraw funds using Duino-Coin API
         'username': DUINO_USERNAME,
-        'password': '', # Change password to yours
+        'password': DUINO_PASSWORD, # Change password to yours
         'recipient': user_data['dusername'],
         'amount': amount,
         'memo': 'Withdraw from Duino Wallet Bot' # Change memo to whatever you want
